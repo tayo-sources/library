@@ -1,7 +1,7 @@
 local library = {}
 
 
-function library::CreateWindow()
+function library::CreateWindow(name)
 
 
 local main = Instance.new("ScreenGui")
@@ -28,9 +28,30 @@ Container.BorderSizePixel = 0
 Container.Position = UDim2.new(-0.000440382282, 0, 0.996451437, 0)
 Container.Size = UDim2.new(0, 762, 0, 433)
 
+
+UIGridLayout.Parent = Container
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 150, 0, 40)
+
+Title.Name = "Title"
+Title.Parent = TopMain
+Title.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Title.BorderSizePixel = 0
+Title.Size = UDim2.new(0, 166, 0, 42)
+Title.Font = Enum.Font.SourceSans
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.TextSize = 25
+Title.Text = name
+
+
+
+
+
+
+
 local EpicLibrary = {}
 
-function EpicLibrary:CreateButton
+function EpicLibrary:CreateButton(text)
    
     local TextButton = Instance.new("TextButton")
 
@@ -44,7 +65,7 @@ function EpicLibrary:CreateButton
     TextButton.TextSize = 22
     TextButton.TextStrokeColor3 = Color3.new(1, 1, 1)
     TextButton.TextWrapped = true
-    
+    TextButton.Text = text
   end
    
   return EpicLibrary    
