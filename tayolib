@@ -1,19 +1,19 @@
 local library = {}
 
-function library:CreateWindow()
 
-    local main = Instance.new("ScreenGui")
+function library:CreateWindow(name)
+
+    local screengui = Instance.new("ScreenGui")
     local TopMain = Instance.new("Frame")
     local Container = Instance.new("Frame")
     local UIGridLayout = Instance.new("UIGridLayout")
     local Title = Instance.new("TextLabel")
 
-
-    main.Name = "main"
-    main.Parent = game.CoreGui
+    screengui.Name = "screengui"
+    screengui.Parent = game.CoreGui
     
     TopMain.Name = "TopMain"
-    TopMain.Parent = main
+    TopMain.Parent = screengui
     TopMain.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
     TopMain.BorderSizePixel = 0
     TopMain.Position = UDim2.new(0.264651448, 0, 0.202702686, 0)
@@ -26,11 +26,10 @@ function library:CreateWindow()
     Container.Position = UDim2.new(-0.000440382282, 0, 0.996451437, 0)
     Container.Size = UDim2.new(0, 762, 0, 433)
 
-
     UIGridLayout.Parent = Container
     UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
     UIGridLayout.CellSize = UDim2.new(0, 150, 0, 40)
-
+    
     Title.Name = "Title"
     Title.Parent = TopMain
     Title.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
@@ -39,29 +38,29 @@ function library:CreateWindow()
     Title.Font = Enum.Font.SourceSans
     Title.TextColor3 = Color3.new(1, 1, 1)
     Title.TextSize = 25
-
-
+    Title.Text = name 
 
 local EpicLibrary = {}
 
-function EpicLibrary:CreateButton
-
+function EpicLibrary:CreateButton(text)
     local TextButton = Instance.new("TextButton")
 
-TextButton.Parent = Container
-TextButton.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.0104987025, 0, 0.000252667814, 0)
-TextButton.Size = UDim2.new(0, 162, 0, 42)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.TextColor3 = Color3.new(1, 1, 1)
-TextButton.TextSize = 22
-TextButton.TextStrokeColor3 = Color3.new(1, 1, 1)
-TextButton.TextWrapped = true
-end 
+    TextButton.Parent = Container
+    TextButton.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+    TextButton.BorderSizePixel = 0
+    TextButton.Position = UDim2.new(0.0104987025, 0, 0.000252667814, 0)
+    TextButton.Size = UDim2.new(0, 162, 0, 42)
+    TextButton.Font = Enum.Font.SourceSans
+    TextButton.TextColor3 = Color3.new(1, 1, 1)
+    TextButton.TextSize = 22
+    TextButton.TextStrokeColor3 = Color3.new(1, 1, 1)
+    TextButton.TextWrapped = true
+    TextButton.Text = text
+
+end
 return EpicLibrary
 end
-
 return library
+
 
 
